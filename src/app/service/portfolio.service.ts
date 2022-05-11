@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 export interface Portfolio {
-  id;
-  regNum;
+  stockId;
+  portfilioId;
   name;
+  ticker;
   price;
-  author;
 }
 
 @Injectable({

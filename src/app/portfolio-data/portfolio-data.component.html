@@ -5,29 +5,34 @@
     </ng-template>
   <ng-template pTemplate="header">
       <tr>
-        <th>Id</th>
+        <th>Stock Id</th>
           <th>Name</th>
-          <th>Author</th>
-          <th>Price</th>
+          <th>Portfolio Id</th>
+          <th>Ticker</th>
+          <th>Market Price</th>
       </tr>
   </ng-template>
   <ng-template pTemplate="body" let-rowData let-editing="editing" let-ri="rowIndex">
       <tr [pEditableRow]="rowData">
         <td>                
-          {{rowData.regNum}}
+          {{rowData.stockId}}
      
       </td>
           <td>                
                       {{rowData.name}}
                  
           </td>
+          <td>                
+            {{rowData.portfilioId}}
+       
+        </td>
           <td>
               <p-cellEditor>
                   <ng-template pTemplate="input">
-                      <input pInputText type="text" [(ngModel)]="rowData.author">
+                      <input pInputText type="text" [(ngModel)]="rowData.ticker">
                   </ng-template>
                   <ng-template pTemplate="output">
-                      {{rowData.author}}
+                      {{rowData.ticker}}
                   </ng-template>
               </p-cellEditor>
           </td>
@@ -62,37 +67,46 @@
       <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="portfolioForDialog">
         <div class="ui-g ui-g-12 ui-g-nopad">
           <div class="ui-g-12 ui-md-3 ui-label">
-              <label for="regNum">Portfolio Reg Number</label>
+              <label for="stockId">Stock Id</label>
           </div>
           <div class="ui-g-12 ui-md-9">
-              <input pInputText id="fname" name="regNum" required
-                     [(ngModel)]="portfolioForDialog.regNum"/>
+              <input pInputText id="stockId" name="stockId" required
+                     [(ngModel)]="portfolioForDialog.stockId"/>
           </div>
-      </div>
+        </div>
           <div class="ui-g ui-g-12 ui-g-nopad">
               <div class="ui-g-12 ui-md-3 ui-label">
-                  <label for="fname">Portfolio Name</label>
+                  <label for="name">Stock Name</label>
               </div>
               <div class="ui-g-12 ui-md-9">
-                  <input pInputText id="fname" name="fname" required
+                  <input pInputText id="name" name="name" required
                          [(ngModel)]="portfolioForDialog.name"/>
               </div>
           </div>
           <div class="ui-g ui-g-12 ui-g-nopad">
+            <div class="ui-g-12 ui-md-3 ui-label">
+                <label for="portfilioId">Portfolio ID</label>
+            </div>
+            <div class="ui-g-12 ui-md-9">
+                <input pInputText id="portfilioId" name="portfilioId" required
+                       [(ngModel)]="portfolioForDialog.portfilioId"/>
+            </div>
+        </div>
+          <div class="ui-g ui-g-12 ui-g-nopad">
               <div class="ui-g-12 ui-md-3 ui-label">
-                  <label for="lname">Author</label>
+                  <label for="ticker">Ticker</label>
               </div>
               <div class="ui-g-12 ui-md-9">
-                  <input pInputText id="lname" name="lname" required
-                         [(ngModel)]="portfolioForDialog.author"/>
+                  <input pInputText id="ticker" name="ticker" required
+                         [(ngModel)]="portfolioForDialog.ticker"/>
               </div>
           </div>
           <div class="ui-g ui-g-12 ui-g-nopad">
               <div class="ui-g-12 ui-md-3 ui-label">
-                  <label for="prof">Price</label>
+                  <label for="price">Market rice</label>
               </div>
               <div class="ui-g-12 ui-md-9">
-                  <input pInputText id="prof" name="prof" required
+                  <input pInputText id="price" name="price" required
                          [(ngModel)]="portfolioForDialog.price"/>
               </div>
           </div>

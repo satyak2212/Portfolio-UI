@@ -57,7 +57,7 @@ export class PortfolioDataComponent implements OnInit {
 
   onPortfolioAdd(){
     this.portfolioForDialog = {
-      id:null,regNum:null,name: null, price: null, author: null
+      stockId:null,portfilioId:null,name: null, price: null, ticker: null
   };
     this.displayDialog = true;
   }
